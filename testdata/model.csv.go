@@ -14,12 +14,12 @@ type Struct1CSV struct {
 	once sync.Once
 }
 
-func (t Struct1CSV) ReadChan() <-chan Struct1 {
+func (t *Struct1CSV) ReadChan() <-chan Struct1 {
 	t.once.Do(func() { t.ch = make(chan Struct1) })
 	return t.ch
 }
 
-func (t Struct1CSV) UnmarshalCSV(r *csv.Reader) error {
+func (t *Struct1CSV) UnmarshalCSV(r *csv.Reader) error {
 	t.once.Do(func() { t.ch = make(chan Struct1) })
 	defer close(t.ch)
 
@@ -63,12 +63,12 @@ type Struct2CSV struct {
 	once sync.Once
 }
 
-func (t Struct2CSV) ReadChan() <-chan Struct2 {
+func (t *Struct2CSV) ReadChan() <-chan Struct2 {
 	t.once.Do(func() { t.ch = make(chan Struct2) })
 	return t.ch
 }
 
-func (t Struct2CSV) UnmarshalCSV(r *csv.Reader) error {
+func (t *Struct2CSV) UnmarshalCSV(r *csv.Reader) error {
 	t.once.Do(func() { t.ch = make(chan Struct2) })
 	defer close(t.ch)
 
