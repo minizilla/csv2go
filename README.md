@@ -1,0 +1,1 @@
+# csv2go [![Go Reference](https://pkg.go.dev/badge/github.com/minizilla/csv2go.svg)](https://pkg.go.dev/github.com/minizilla/csv2go) [![main](https://github.com/minizilla/csv2go/actions/workflows/main.yaml/badge.svg)](https://github.com/minizilla/csv2go/actions/workflows/main.yaml)
